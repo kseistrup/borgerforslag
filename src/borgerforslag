@@ -1,0 +1,323 @@
+#!/usr/bin/env python3
+# -*- mode: python; coding: utf-8 -*-
+"""
+Usage: borgerforslag [OPTIONS]
+  options are:
+    -h, --help ........ show this help text and exit
+    -v, --version ..... print version information and exit
+    -c, --copyright ... show copying policy and exit
+"""
+##############################################################################
+# This program is free software; you can redistribute it and/or modify it    #
+# under the terms of the GNU General Public License as published by the Free #
+# Software Foundation; either version 3 of the License, or (at your option)  #
+# any later version.                                                         #
+#                                                                            #
+# This program is distributed in the hope that it will be useful, but with-  #
+# out any warranty; without even the implied warranty of merchantability or  #
+# fitness for a particular purpose. See the GNU General Public License for   #
+# more details.  <http://gplv3.fsf.org/>                                     #
+##############################################################################
+
+import sys
+import os
+import pathlib
+import argparse
+import json
+import uuid
+import re
+import time
+
+from pprint import pprint
+
+try:
+    from locale import (Error, setlocale, LC_ALL)
+    _ = setlocale(LC_ALL, '')
+except (ImportError, NameError, Error):
+    pass
+
+# 3rd party modules
+try:
+    import requests
+    import dateutil.parser
+    import dateutil.tz
+except ImportError as imperr:
+    print(imperr, file=sys.stderr)
+    sys.exit(1)
+
+__author__ = 'Klaus Alexander Seistrup <klaus@seistrup.dk>'
+__whoami__ = 'borgerforslag'
+__revision__ = '2018-04-01'
+__version__ = '0.0.2 ({})'.format(__revision__)
+__agent__ = 'Borgerforslag/{}'.format(__version__)
+__copyright__ = """\
+borgerforslag {}
+Copyright © 2018 Klaus Alexander Seistrup <klaus@seistrup.dk>
+
+This is free software; see the source for copying conditions. There is no
+warranty; not even for merchantability or fitness for a particular purpose.\
+""".format(__version__)
+
+(STDIN, STDOUT, STDERR) = (sys.stdin, sys.stdout, sys.stderr)
+
+DEBUG = os.environ.get('DEBUG', 'False')[0].upper() in '1JTY'  # 1/Ja/True/Yes
+EPILOG = None
+
+FORSIDE = 'https://www.borgerforslag.dk/'
+API_URL = 'https://www.borgerforslag.dk/api/proposals/search'
+
+FORSLAG = re.compile(r'<script data-module="ProposalEditor">_components.push\(({.+})\);</script>')
+
+SPOOL_DIR = pathlib.Path('forslag')
+TWTXT_TXT = pathlib.Path('borgerforslag.txt')
+
+DELAY = 0.671
+
+def debug(head, data=None):
+    """Possibly pretty print an object to stderr"""
+    if DEBUG:
+        pprint(head if data is None else {head: data}, stream=STDERR)
+
+def deuglify(error):
+    """Deuglify the EnvironmentError class of errors"""
+    debug('ugly', error)
+
+    if not isinstance(error, Exception):
+        return error
+
+    nargs = len(error.args)
+
+    if nargs == 1:
+        return str(error)
+
+    strerr = getattr(error, 'strerror', None)
+
+    if nargs == 2 and strerr is not None:
+        fname1 = getattr(error, 'filename', None)
+        fname2 = getattr(error, 'filename2', None)
+
+        if fname1 and fname2:
+            return '{}: {} → {}'.format(strerr, fname1, fname2)
+        if fname1 or fname2:
+            return '{}: {}'.format(strerr, fname1 or fname2)
+
+        return strerr
+
+    # Let's not pretend that we know the nature on the exception
+    return error
+
+def die(error=None):
+    """Exit gracefully"""
+    debug('exit', error)
+
+    if error:
+        print(deuglify(error), file=STDERR)
+
+    sys.exit(1 if error else 0)
+
+def get_headers(post=False):
+    """Create headers"""
+    headers = {
+        'DNT': '1',
+        'User-Agent': __agent__,
+        'X-Python-Version': 'Python/{}.{}.{}'.format(*sys.version_info),
+        'X-UUID': str(uuid.uuid4()),
+    }
+
+    if post:
+        headers['Content-Type'] = 'application/json'
+
+    return headers
+
+def get_payload(numitems=100):
+    """POST data for the latest NUMITEMS items"""
+    if not isinstance(numitems, int):
+        die('NUMITEMS must be an integer')
+    if numitems < 1:
+        die('NUMITEMS must be at least 1')
+
+    payload = {
+        'filter': 'all',
+        'pageNumber': 0,
+        'pageSize': numitems,
+        'searchQuery': '',
+        'sortOrder': 'NewestFirst'
+    }
+
+    return json.dumps(payload)
+
+def get_latest(numitems=100):
+    """Fetch the latest NUMITEMS items"""
+    headers = get_headers(post=True)
+    payload = get_payload(numitems)
+    response = requests.post(API_URL, headers=headers, data=payload)
+
+    if response.status_code != 200:
+        die('POST error {}'.format(response.status_code))
+
+    return response.json()
+
+def get_forslag(path):
+    """Get FT-NNNNN"""
+    headers = get_headers(post=False)
+
+    if path.startswith('http'):
+        url = path
+    else:
+        url = 'https://www.borgerforslag.dk{}'.format(path)
+
+    response = requests.get(url, headers=headers)
+
+    if response.status_code != 200:
+        die('GET error {}: {}'.format(response.status_code, path))
+
+    html = response.text.replace('\r\n', '\n')
+    match = FORSLAG.search(html)
+
+    if match is None:
+        die('No JSON found in page {}'.format(path))
+
+    blob = match.group(1)
+    debug('json', blob)
+    data = json.loads(blob)
+    # debug('data', data)
+
+    return data
+
+def has_forslag(xid):
+    """Do we already have FT-NNNNN?"""
+    filename = '{}.json'.format(xid)
+    filepath = SPOOL_DIR / filename
+
+    return filepath.exists() and filepath.is_file()
+
+def save_forslag(xid, forslag):
+    """Save FORSLAG to disk with name XID.json"""
+    filename = '{}.json'.format(xid)
+    filepath = SPOOL_DIR / filename
+
+    with filepath.open('w') as fptr:
+        fptr.write(json.dumps(forslag))
+
+def get_approvedate(data):
+    """Get approveDate, deeply burried in JSON"""
+    try:
+        proposal = data['props']['proposalCreationViewModel']['proposal']
+        if proposal is None:
+            raise KeyError
+        approvedate = proposal.get(
+            'approveDate',
+            proposal.get(
+                'aprroveDate',
+                None
+            )
+        )
+        if approvedate is None:
+            raise KeyError
+    except KeyError:
+        die('Cannot find approveDate in JSON')
+
+    cph = dateutil.tz.gettz('Europe/Copenhagen')
+    naivedate = dateutil.parser.parse(approvedate)
+    localdate = naivedate.replace(tzinfo=cph)
+
+    rfc3339 = '{:%FT%T%z}'.format(localdate)
+
+    return rfc3339
+
+def append_twtxt(new):
+    """Append NEW proposals to TWTXT"""
+    lines = []
+    for (date, xid, title, path) in sorted(new):
+        if path.startswith('http'):
+            url = path
+        else:
+            url = 'https://www.borgerforslag.dk{}'.format(path)
+        line = '{}\t{}: {} ⌘ {}\n'.format(
+            date, xid, title, url
+        )
+        lines.append(line)
+
+    with TWTXT_TXT.open('a') as fptr:
+        fptr.writelines(lines)
+
+    STDOUT.writelines(lines)
+
+def borgerforslag():
+    """Update TWTXT"""
+    latest = get_latest(100)
+    index = latest.get('data', [])
+
+    if len(index) < 1:
+        die('No data from API')
+
+    sleep = len(index) > 1
+    new = []
+
+    collapse = lambda s: ' '.join(s.split())
+
+    for item in index:
+        xid = item.get('externalId', None)
+        if xid is None:
+            continue
+        if has_forslag(xid):
+            continue
+        title = collapse(item.get('title', ''))
+        if not title:
+            continue
+        url = item.get('url', None)
+        if url is None:
+            continue
+
+        forslag = get_forslag(url)
+        appdate = get_approvedate(forslag)
+        save_forslag(xid, forslag)
+
+        new.append(
+            (appdate, xid, title, url)
+        )
+
+        if sleep:
+            time.sleep(DELAY)
+
+    if new:
+        append_twtxt(new)
+
+def tjek():
+    """Mic check"""
+    if not SPOOL_DIR.exists() or not SPOOL_DIR.is_dir():
+        die('No such directory: {}'.format(SPOOL_DIR.as_posix()))
+    if not TWTXT_TXT.exists() or not TWTXT_TXT.is_file():
+        die('No such file: {}'.format(TWTXT_TXT.as_posix()))
+
+def main(progname=__whoami__):
+    """Main entry point"""
+
+    debug('argv', sys.argv)
+
+    parser = argparse.ArgumentParser(
+        prog=progname,
+        formatter_class=argparse.RawTextHelpFormatter,
+        epilog=EPILOG
+    )
+    # Generic arguments
+    parser.add_argument('-v', '--version', action='version',
+                        version='%(prog)s/{}'.format(__version__),
+                        help='show version information and exit')
+    parser.add_argument('-c', '--copyright', action='version',
+                        version=__copyright__,
+                        help='show copying policy and exit')
+    # Specific arguments
+
+    args = parser.parse_args()
+    debug('args', args)
+
+    tjek()
+    borgerforslag()
+
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main(pathlib.Path(sys.argv[0]).name))
+
+# eof
