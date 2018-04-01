@@ -1,0 +1,110 @@
+#  _            _        _
+# | |___      _| |___  _| |_
+# | __\ \ /\ / / __\ \/ / __|
+# | |_ \ V  V /| |_ >  <| |_
+#  \__| \_/\_/  \__/_/\_\\__|
+#
+# Twtxt is an open, distributed
+# microblogging platform that
+# uses human-readable text files,
+# common transport protocols, and
+# free software.
+#
+# Learn more about twtxt at
+#   https://github.com/buckket/twtxt
+#
+# ————————————————————————————————————————————
+#
+#   nick = borgerforslag
+#    url = https://enotty.dk/borgerforslag.txt
+#   lang = da
+# source = https://www.borgerforslag.dk/
+#
+# ————————————————————————————————————————————
+2018-01-26T11:38:03+0100	FT-00005: Forslag om at afskaffe uddannelsesloftet! ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00005
+2018-01-30T12:03:26+0100	FT-00067: Statsborgerskab til unge mennesker, som er født og opvokset i Danmark - indfødsret ved erklæringsafgivelse ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00067
+2018-01-30T12:06:10+0100	FT-00034: POLITISK FORSLAG TIL HØRING I FOLKETINGET OM ÆNDRINGER AF ANBRAGTE BØRN OG PLEJEFAMILIERS RETTIGHEDER. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00034
+2018-01-30T12:07:32+0100	FT-00059: Automatisk førtidspension til personer der har været udsat for seksualt overgreb og/el. systematisk vold/tortur igennem opvækst ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00059
+2018-01-30T12:09:03+0100	FT-00139: Opæhvelse af begrænsning på 45 knallerter ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00139
+2018-01-30T14:20:09+0100	FT-00131: Grøn mad i alle offentlige køkkener ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00131
+2018-02-01T12:27:32+0100	FT-00120: Omskæring af drenge – 18-års grænse ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00120
+2018-02-01T12:34:45+0100	FT-00124: Indførelse af 18 års mindstealder for omskæring af raske børn ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00124
+2018-02-01T12:40:54+0100	FT-00149: Forbud mod råstofudvinding i Øresund ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00149
+2018-02-01T12:44:34+0100	FT-00188: Ligestilling for ioniserende stråling ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00188
+2018-02-01T13:06:28+0100	FT-00190: Borgerforslag om afskaffelse af lægekonsulenter ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00190
+2018-02-01T13:10:17+0100	FT-00191: STOP psykiatriseringen af fysisk syge borgere ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00191
+2018-02-01T13:12:42+0100	FT-00182: Forbyd brug af lægekonsulenter og eksterne aktører. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00182
+2018-02-02T12:01:04+0100	FT-00226: Afskaffelse af karakterer systemet ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00226
+2018-02-02T12:03:03+0100	FT-00174: Forslag om mærkning af kød slagtet i henhold til religiøst ritual! ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00174
+2018-02-06T13:19:21+0100	FT-00192: Etablering af et pilotprojekt i Danmark med formål at undersøge mulighederne for i fremtiden at indføre basisindkomst (borgerløn) for alle. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00192
+2018-02-06T13:20:22+0100	FT-00110: Forslag om nedsat medielicens for unge og studerende ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00110
+2018-02-06T13:21:39+0100	FT-00259: Afskaf eller omform hundeloven! ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00259
+2018-02-06T13:22:29+0100	FT-00224: Udfasning af egenbetalingen til daginstutioner ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00224
+2018-02-08T12:07:00+0100	FT-00042: Statens logningsbekendtgørelse skal annulleres ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00042
+2018-02-08T12:51:29+0100	FT-00193: Vi har aldrig stemt for EU. Folkeafstemning NU! ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00193
+2018-02-09T10:34:10+0100	FT-00270: Online valg ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00270
+2018-02-09T10:50:42+0100	FT-00201: Dansk udmeldelse af EU ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00201
+2018-02-09T10:53:26+0100	FT-00180: Automatisk tilmelding til organdonation ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00180
+2018-02-09T12:34:16+0100	FT-00300: Genindførsel af revisionspligt. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00300
+2018-02-09T12:37:40+0100	FT-00111: Et opgør med centraliseringen ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00111
+2018-02-12T09:46:48+0100	FT-00104: Afskaffelse af sommertid ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00104
+2018-02-12T09:49:40+0100	FT-00117: Nej til syge borgere på kontanthjælp ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00117
+2018-02-12T09:55:45+0100	FT-00109: "Gratis Tandlæge" Det bør være gratis at gå til tandlægen for borgerne i Danmark. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00109
+2018-02-12T10:04:19+0100	FT-00066: Restriktioner på psykofarmaka ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00066
+2018-02-12T10:06:35+0100	FT-00073: Elefantræs på motorvejen ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00073
+2018-02-12T10:23:05+0100	FT-00146: Arveafgift ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00146
+2018-02-12T10:27:00+0100	FT-00289: Legalisering cannabis ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00289
+2018-02-12T10:32:16+0100	FT-00257: Forslag om borgerløn uden modkrav, i en forsøgsordning i 4 år. For langtidsledige, langtidssyge, og borgere under længerevarende uddannelse. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00257
+2018-02-12T10:40:53+0100	FT-00196: At der indføres et nationalt DNA register for hunde og katte. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00196
+2018-02-13T10:15:06+0100	FT-00171: Mist ikke synet, hvis du er blevet 65 år, for så får du ingen hjælp! ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00171
+2018-02-13T10:34:02+0100	FT-00381: Stop Hovedstadens Letbane ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00381
+2018-02-13T10:36:53+0100	FT-00090: Genindfør den tidligere fleksjobreform (før 2013) ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00090
+2018-02-14T11:50:06+0100	FT-00138: Forslag til Planloven - tid til forandring og retfærdighed! ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00138
+2018-02-19T09:40:53+0100	FT-00072: Fredning af dyr skal standse slagteri-industri ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00072
+2018-02-19T09:44:17+0100	FT-00209: Ændringsforslag til ændring af færdelsloven hvorved motorcykler tillades at kører mellem trafikken, ved langsom eller stillestående trafik. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00209
+2018-02-19T09:45:26+0100	FT-00062: AM-bidraget skal afskaffes ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00062
+2018-02-19T09:56:45+0100	FT-00362: Medielicens afskaffes ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00362
+2018-02-19T10:04:41+0100	FT-00306: Borgerforslag om Legalisering af cannabis ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00306
+2018-02-21T09:10:58+0100	FT-00273: Stop for adgang til at søge spontan asyl i Danmark ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00273
+2018-02-22T12:23:48+0100	FT-00076: Udskrive valg med henblik på udmeldelse af Den Europæiske Union. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00076
+2018-02-22T12:33:43+0100	FT-00277: Sikring af korrekt skattebehandling af borgeren (fremsat af Foreningen Rimelig-skat) ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00277
+2018-02-22T13:00:57+0100	FT-00431: Forbyd mandlig sterilisation. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00431
+2018-02-22T13:03:21+0100	FT-00444: Forslag til folketingsbeslutning om halvering af modregning i pensionstillæg – ”Samspilsproblemet” samt ændring vedrørende Satspuljen. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00444
+2018-02-22T13:26:35+0100	FT-00420: Forslag om ombygning af garager mv. til små boligenheder ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00420
+2018-02-26T09:58:48+0100	FT-00345: Oprensning og sikring af stærkt forurenede grunde ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00345
+2018-02-26T10:00:24+0100	FT-00119: Nedsættelse af moms på økologiske frugt og grøntsager. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00119
+2018-02-26T10:08:21+0100	FT-00350: Indfør straffeloven på socialområdet ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00350
+2018-02-26T10:14:32+0100	FT-00456: HJERTER DAME vil ændrer loven ved seksuelle overgreb på mindreårige. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00456
+2018-02-26T10:24:55+0100	FT-00476: Ændring af Forældreansvarslovens § 3, stk. 1 og § 18. For at give børn bedre muligheder når forældrene skilles. Barnets bedste #fairforalle ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00476
+2018-02-26T10:41:21+0100	FT-00346: Afskaf borgerforslag ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00346
+2018-02-27T14:17:45+0100	FT-00251: Deltidsinstitutioner i alle kommuner ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00251
+2018-03-02T13:55:17+0100	FT-00430: Erklæring om troskab i.f.m. statsborgerskab ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00430
+2018-03-02T13:57:31+0100	FT-00385: Reklamer Nej Tak ➝ Reklamer Ja Tak ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00385
+2018-03-02T14:04:35+0100	FT-00413: Forbyd at markedsføre noget som "gratis" i politisk sammenhæng ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00413
+2018-03-02T14:09:25+0100	FT-00455: Forbyd kritik af folkekirken ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00455
+2018-03-02T14:12:06+0100	FT-00499: #Stopcleancutstøtplejebørnsret Lovforslag vedr. kommuners brug af ”Clean cut” ved ændring af et barns anbringelsessted. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00499
+2018-03-02T14:12:51+0100	FT-00410: Automatisk organdonor fra man fylder 18 år ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00410
+2018-03-09T14:08:29+0100	FT-00448: A-kassers ret til at tvangsudmelde medlemmer bør forbydes. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00448
+2018-03-09T14:10:53+0100	FT-00449: Et statsligt alternativ til de private banker - en Statsbank ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00449
+2018-03-12T09:57:22+0100	FT-00479: Forbyd reklamer for spil ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00479
+2018-03-12T09:58:41+0100	FT-00510: Folkepensionisterne svigtes af Folketinget. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00510
+2018-03-12T09:59:44+0100	FT-00457: UDVIDET DÆKNING AF SYGESIKRINGEN. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00457
+2018-03-12T10:03:02+0100	FT-00520: Højere straffe i bestemte områder - skærpet strafzone for økonomisk kriminalitet ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00520
+2018-03-12T10:06:46+0100	FT-00508: 5 ÅR MERE TIL MARGRETHE VESTAGER ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00508
+2018-03-12T10:08:48+0100	FT-00462: Forbyde alt salg og import af pels fra dyr ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00462
+2018-03-12T10:10:11+0100	FT-00461: Alle pelsfarme skal lukkes i Danmark ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00461
+2018-03-12T10:11:50+0100	FT-00536: Borgerforslag - fædrebarsel ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00536
+2018-03-12T10:12:39+0100	FT-00542: Førstehjælpskursus mindst hver andet år ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00542
+2018-03-15T10:04:52+0100	FT-00485: Folkepensionisters købekraft skal sikres. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00485
+2018-03-15T10:11:01+0100	FT-00588: Register over frivilligt blacklistede personer hos kviklånsudbydere. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00588
+2018-03-15T10:40:27+0100	FT-00604: Danske statsborgere skal kunne bo i Danmark med deres familie på samme vilkår som EU-borgere. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00604
+2018-03-15T11:55:27+0100	FT-00598: Send konfliktpengene tilbage til velfærden ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00598
+2018-03-19T14:32:52+0100	FT-00494: Ekspropriation og erstatning ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00494
+2018-03-19T14:34:13+0100	FT-00496: Afskaf Gensidig forsøgerpligt ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00496
+2018-03-21T14:56:38+0100	FT-00535: Borgerforslag - Digital post til begge forældre ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00535
+2018-03-21T15:04:59+0100	FT-00635: Forslag om at hæve reklamationsretten til 4 år ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00635
+2018-03-21T15:11:25+0100	FT-00626: Balance i Den Danske Model ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00626
+2018-03-23T11:54:24+0100	FT-00564: Minimumsnormeringer i daginstitutioner ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00564
+2018-03-23T15:34:10+0100	FT-00614: Aflønning af folketingest medlemmer samt regeringens ministre. ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00614
+2018-03-23T15:34:51+0100	FT-00613: Afskaffelse af ministerbiler ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00613
+2018-03-23T15:36:05+0100	FT-00616: Afskaffelse af ministerpension og pension til ministerbørn ⌘ https://www.borgerforslag.dk/se-og-stoet-forslag/?Id=FT-00616
