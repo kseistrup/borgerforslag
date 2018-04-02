@@ -48,8 +48,8 @@ except ImportError as imperr:
 __author__ = 'Klaus Alexander Seistrup <klaus@seistrup.dk>'
 __whoami__ = 'borgerforslag'
 __revision__ = '2018-04-01'
-__version__ = '0.0.2 ({})'.format(__revision__)
-__agent__ = 'Borgerforslag/{}'.format(__version__)
+__version__ = '0.0.3 ({})'.format(__revision__)
+__agent__ = 'pyBorgerforslag/{}'.format(__version__)
 __copyright__ = """\
 borgerforslag {}
 Copyright © 2018 Klaus Alexander Seistrup <klaus@seistrup.dk>
@@ -141,7 +141,7 @@ def get_payload(numitems=100):
         'pageNumber': 0,
         'pageSize': numitems,
         'searchQuery': '',
-        'sortOrder': 'NewestFirst'
+        'sortOrder': 'NewestFirst',
     }
 
     return json.dumps(payload)
@@ -180,7 +180,6 @@ def get_forslag(path):
     blob = match.group(1)
     debug('json', blob)
     data = json.loads(blob)
-    # debug('data', data)
 
     return data
 
