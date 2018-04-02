@@ -48,7 +48,7 @@ except ImportError as imperr:
 __author__ = 'Klaus Alexander Seistrup <klaus@seistrup.dk>'
 __whoami__ = 'borgerforslag'
 __revision__ = '2018-04-01'
-__version__ = '0.0.3 ({})'.format(__revision__)
+__version__ = '0.0.4 ({})'.format(__revision__)
 __agent__ = 'pyBorgerforslag/{}'.format(__version__)
 __copyright__ = """\
 borgerforslag {}
@@ -66,17 +66,22 @@ EPILOG = None
 FORSIDE = 'https://www.borgerforslag.dk/'
 API_URL = 'https://www.borgerforslag.dk/api/proposals/search'
 
-FORSLAG = re.compile(r'<script data-module="ProposalEditor">_components.push\(({.+})\);</script>')
+PROPED = r"""
+<script data-module="ProposalEditor">_components.push\(({.+})\);</script>
+"""
+FORSLAG = re.compile(PROPED.strip())
 
 SPOOL_DIR = pathlib.Path('forslag')
 TWTXT_TXT = pathlib.Path('borgerforslag.txt')
 
 DELAY = 0.671
 
+
 def debug(head, data=None):
     """Possibly pretty print an object to stderr"""
     if DEBUG:
         pprint(head if data is None else {head: data}, stream=STDERR)
+
 
 def deuglify(error):
     """Deuglify the EnvironmentError class of errors"""
@@ -106,6 +111,7 @@ def deuglify(error):
     # Let's not pretend that we know the nature on the exception
     return error
 
+
 def die(error=None):
     """Exit gracefully"""
     debug('exit', error)
@@ -114,6 +120,7 @@ def die(error=None):
         print(deuglify(error), file=STDERR)
 
     sys.exit(1 if error else 0)
+
 
 def get_headers(post=False):
     """Create headers"""
@@ -128,6 +135,7 @@ def get_headers(post=False):
         headers['Content-Type'] = 'application/json'
 
     return headers
+
 
 def get_payload(numitems=100):
     """POST data for the latest NUMITEMS items"""
@@ -146,6 +154,7 @@ def get_payload(numitems=100):
 
     return json.dumps(payload)
 
+
 def get_latest(numitems=100):
     """Fetch the latest NUMITEMS items"""
     headers = get_headers(post=True)
@@ -156,6 +165,7 @@ def get_latest(numitems=100):
         die('POST error {}'.format(response.status_code))
 
     return response.json()
+
 
 def get_forslag(path):
     """Get FT-NNNNN"""
@@ -183,12 +193,14 @@ def get_forslag(path):
 
     return data
 
+
 def has_forslag(xid):
     """Do we already have FT-NNNNN?"""
     filename = '{}.json'.format(xid)
     filepath = SPOOL_DIR / filename
 
     return filepath.exists() and filepath.is_file()
+
 
 def save_forslag(xid, forslag):
     """Save FORSLAG to disk with name XID.json"""
@@ -197,6 +209,7 @@ def save_forslag(xid, forslag):
 
     with filepath.open('w') as fptr:
         fptr.write(json.dumps(forslag))
+
 
 def get_approvedate(data):
     """Get approveDate, deeply burried in JSON"""
@@ -224,6 +237,7 @@ def get_approvedate(data):
 
     return rfc3339
 
+
 def append_twtxt(new):
     """Append NEW proposals to TWTXT"""
     lines = []
@@ -242,6 +256,7 @@ def append_twtxt(new):
 
     STDOUT.writelines(lines)
 
+
 def borgerforslag():
     """Update TWTXT"""
     latest = get_latest(100)
@@ -253,7 +268,9 @@ def borgerforslag():
     sleep = len(index) > 1
     new = []
 
-    collapse = lambda s: ' '.join(s.split())
+    def collapse(thestr):
+        """Collapse multiple blanks"""
+        return ' '.join(thestr.split())
 
     for item in index:
         xid = item.get('externalId', None)
@@ -282,12 +299,14 @@ def borgerforslag():
     if new:
         append_twtxt(new)
 
+
 def tjek():
     """Mic check"""
     if not SPOOL_DIR.exists() or not SPOOL_DIR.is_dir():
         die('No such directory: {}'.format(SPOOL_DIR.as_posix()))
     if not TWTXT_TXT.exists() or not TWTXT_TXT.is_file():
         die('No such file: {}'.format(TWTXT_TXT.as_posix()))
+
 
 def main(progname=__whoami__):
     """Main entry point"""
@@ -315,6 +334,7 @@ def main(progname=__whoami__):
     borgerforslag()
 
     return 0
+
 
 if __name__ == '__main__':
     sys.exit(main(pathlib.Path(sys.argv[0]).name))
